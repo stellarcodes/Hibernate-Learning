@@ -34,8 +34,11 @@ public class TestDrive {
 		/**
 		 * creating new entry for the user entity
 		 */
-		Address address = new Address("XXXX", "YYYYY", "NC", "USA", "78779");
-		User user = new User("PravinKumar", "VP", "97897896786", address);
+		Address address = new Address("XXXX", "YYYYY", "NY", "USA", "78779");
+		Address officeAddress = new Address("XXXX", "YYYYY", "NC", "USA",
+				"78778");
+		User user = new User("PravinKumar", "VP", "97897896786", address,
+				officeAddress);
 
 		/**
 		 * Creating transaction

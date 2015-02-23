@@ -1,5 +1,7 @@
 package com.stellarcodes.embeddable.entity;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -35,6 +37,21 @@ public class User {
 	@Column(name = "CONTACT_NO")
 	private String contactNo;
 
+	/**
+	 * here we have added another (@Embedded) Object as office address but table
+	 * does not have duplicate columns so we need to override the column names
+	 * using (@AttributeOverrides).
+	 */
+	@Embedded
+	@AttributeOverrides({
+
+			@AttributeOverride(name = "street", column = @Column(name = "OFF_STREET")),
+			@AttributeOverride(name = "state", column = @Column(name = "OFF_STATE")),
+			@AttributeOverride(name = "pincode", column = @Column(name = "OFF_PINCODE")),
+			@AttributeOverride(name = "city", column = @Column(name = "OFF_CITY")),
+			@AttributeOverride(name = "country", column = @Column(name = "OFF_COUNTRY")) })
+	private Address officeAddress;
+
 	@Embedded
 	private Address userAddress;
 
@@ -42,11 +59,20 @@ public class User {
 	}
 
 	public User(String firstName, String lastName, String contactNo,
-			Address userAddress) {
+			Address userAddress, Address officeAddress) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.contactNo = contactNo;
 		this.userAddress = userAddress;
+		this.officeAddress = officeAddress;
+	}
+
+	public Address getOfficeAddress() {
+		return officeAddress;
+	}
+
+	public void setOfficeAddress(Address officeAddress) {
+		this.officeAddress = officeAddress;
 	}
 
 	public Long getId() {
