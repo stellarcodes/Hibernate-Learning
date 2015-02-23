@@ -22,10 +22,10 @@ public class Test {
 
 		UserContact contact = new UserContact();
 
-		contact.setContactNo("9600270541");
+		contact.setContactNo("9888009009");
 		contact.setCreatedDate(new Date());
 		contact.setUpdatedDate(new Date());
-		contact.setEmailAddress("pravinkumaratwork@gmail.com");
+		contact.setEmailAddress("xxxx@gmail.com");
 		contact.setFirstName("PravinKumar");
 		contact.setLastName("P");
 

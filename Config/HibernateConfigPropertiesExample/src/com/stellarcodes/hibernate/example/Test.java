@@ -35,7 +35,7 @@ public class Test {
 			session.beginTransaction();
 
 			UserContact contact = new UserContact("Harishna", "M",
-					"9600270541", "test@test.com", new Date(), new Date());
+					"09808800909", "test@test.com", new Date(), new Date());
 			session.save(contact);
 
 			session.getTransaction().commit();

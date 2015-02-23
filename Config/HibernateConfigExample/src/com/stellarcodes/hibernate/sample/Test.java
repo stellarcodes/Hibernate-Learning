@@ -19,7 +19,7 @@ public class Test {
 
 		session.beginTransaction();
 
-		UserContact contact = new UserContact("Rithvika", "Sri", "9600270541",
+		UserContact contact = new UserContact("Rithvika", "Sri", "0989980909",
 				"test@test.com", new Date(), new Date());
 
 		session.save(contact);
