@@ -45,6 +45,10 @@ public class User {
 	 * When user have more than one address, we can use @ElementCollection with
 	 * the dependency of user object. While saving set of addresses hibernate
 	 * puts this into separate table with user id as reference.
+	 * 
+	 * the fetch type will be LAZY by default, you can also make it EAGER by 
+	 * specifying the fetch type to EAGER in @ElementCollection.
+	 *  
 	 */
 	@ElementCollection(fetch=FetchType.EAGER)
 	@JoinTable(name = "USER_ADDRESS", joinColumns = @JoinColumn(name = "USER_ID"))
